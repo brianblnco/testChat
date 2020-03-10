@@ -21,11 +21,11 @@ public class Cliente {
 		
 		mimarco.setTitle("Hi " + x.toString() + "!");
 		mimarco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+	
 	}
 
 }
-
+ //
 
 
 
@@ -36,11 +36,11 @@ public class Cliente {
 
 
 //DESARROLLO DE LA INTERFAZ
-//JPanel creaci√≥n
+//JPanel creation
 class LaminaMarcoCliente extends JPanel{
 	
 	
-	private JTextField campo1; //caja de texto del mensaje que enviar√° el cliente
+	private JTextField campo1; //caja de texto del mensaje que enviar el cliente
 	
 	private JButton miboton;
 	
@@ -57,7 +57,7 @@ class LaminaMarcoCliente extends JPanel{
 	
 		miboton=new JButton("Enviar");
 		
-		//isntanciamos ( clase interna ) el evento y se lo a√±adimos al esuchador de eventos  del boton
+		//isntanciamos ( clase interna ) el evento y se lo aÒadimos al esuchador de eventos  del boton
 		EnviarTexto miEvento = new EnviarTexto();
 		
 		miboton.addActionListener(miEvento);
@@ -66,28 +66,36 @@ class LaminaMarcoCliente extends JPanel{
 		
 	}
 	
+	
 	//Clase Interna para el boton enviar
 	private class EnviarTexto implements ActionListener{
 
-		@Override
+		@Override 
 		public void actionPerformed(ActionEvent arg0) {
 			//System.out.println(campo1.getText());
 			
 			try {
 				//puente virtual que va desde el cliente hasta el servidor 
 				//lo abriremos posteriormente en la clase del servidor
-				
-				Socket socketServidor = new Socket("192.168.40.182",9999);
-					
+				System.out.println("Entro en el try ");
+				Socket socketServidor = new Socket("192.168.40.182",8070);
+					System.out.println(" se abriÛ el socket para conectarse con el servidor ");
 				//flujo de datos
 				DataOutputStream flujo_salida = new DataOutputStream(socketServidor.getOutputStream()); //le pasamos como parmetro el 
+				System.out.println( " String del flujo de datos" + flujo_salida.toString());
 			
+				
+				
+				
+				
+				
+				socketServidor.close();
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				System.out.println(e.getMessage());
+				System.out.println( "Error " + e.getMessage());
 			}
 			
 		}
