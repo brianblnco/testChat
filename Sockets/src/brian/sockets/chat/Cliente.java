@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.*;
 
 
-//PROBANDO SI ES NECESATIO HACER UN PUSH PARA VER LOS CAMBIOS EN NUESTO REPOSITORIO DE GIT HUB ( commands line tool )
+
 public class Cliente {
 	
 	public static void main(String[] args) {
@@ -36,15 +36,15 @@ public class Cliente {
 
 
 //DESARROLLO DE LA INTERFAZ
-//JPanel creaciÛn
+//JPanel creaci√≥n
 class LaminaMarcoCliente extends JPanel{
 	
 	
-	private JTextField campo1; //caja de texto del mensaje que enviar· el cliente
+	private JTextField campo1; //caja de texto del mensaje que enviar√° el cliente
 	
 	private JButton miboton;
 	
-	//constructor donde aÒadimos los controles
+	//constructor donde a√±adimos los controles
 	public LaminaMarcoCliente(){
 	
 		JLabel texto=new JLabel("Send a message");
@@ -57,7 +57,7 @@ class LaminaMarcoCliente extends JPanel{
 	
 		miboton=new JButton("Enviar");
 		
-		//isntanciamos ( clase interna ) el evento y se lo aÒadimos al esuchador de eventos  del boton
+		//isntanciamos ( clase interna ) el evento y se lo a√±adimos al esuchador de eventos  del boton
 		EnviarTexto miEvento = new EnviarTexto();
 		
 		miboton.addActionListener(miEvento);
@@ -97,7 +97,7 @@ class LaminaMarcoCliente extends JPanel{
 	
 }
 
-//contenedor general del cliente  ( dentro ir· el JPanel)
+//contenedor general del cliente  ( dentro ir√° el JPanel)
 class MarcoCliente extends JFrame{
 	
 	//constructor contenedorr general
